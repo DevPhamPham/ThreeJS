@@ -492,8 +492,8 @@ function init() {
          gltfLoader.load(url, (gltf) => {
           var root = gltf.scene;
           scene.add(root);
-          root.position.set(-100, 2, 200);
-          root.scale.set(2500, 2500, 2500);
+          root.position.set(0, 0, -50);
+          root.scale.set(7500, 7500, 7500);
          });
       }
     }
