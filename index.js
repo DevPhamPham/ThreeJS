@@ -384,7 +384,7 @@ function init() {
     var planeSize = 1500;
 
     var loader = new THREE.TextureLoader();
-    var texture = loader.load("./asset/image/sand.jpg");
+    var texture = loader.load("./asset/image/Sand.jpg");
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.magFilter = THREE.NearestFilter;
