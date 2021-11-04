@@ -486,16 +486,16 @@ function init() {
     
     function city() {
       //                    add .GLTFLoader         city.glb
-    //   {
-    //      var gltfLoader = new THREE.GLTFLoader();
-    //      var url = "./GLBs/architecture/Castle.glb";
-    //      gltfLoader.load(url, (gltf) => {
-    //       var root = gltf.scene;
-    //       scene.add(root);
-    //       root.position.set(-100, 2, 200);
-    //       root.scale.set(2500, 2500, 2500);
-    //      });
-    //   }
+      {
+         var gltfLoader = new THREE.GLTFLoader();
+         var url = "./GLBs/architecture/Castle.glb";
+         gltfLoader.load(url, (gltf) => {
+          var root = gltf.scene;
+          scene.add(root);
+          root.position.set(-100, 2, 200);
+          root.scale.set(2500, 2500, 2500);
+         });
+      }
     }
 
     
