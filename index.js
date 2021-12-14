@@ -235,11 +235,11 @@ function init() {
   // CONTROLS
   const orbitControls = new THREE.OrbitControls(camera, renderer.domElement);
   orbitControls.enableDamping = true;
-  orbitControls.minDistance = 59;
+  orbitControls.minDistance = 40;
   orbitControls.target.y = 25;
-  orbitControls.maxDistance = 60;
+  orbitControls.maxDistance = 48;
   orbitControls.enablePan = true;
-  // orbitControls.maxPolarAngle = Math.PI - 1.3;
+  orbitControls.maxPolarAngle = Math.PI - 1.3;
   orbitControls.update();
 
   // LIGHTS
@@ -379,11 +379,11 @@ function init() {
     texture.wrapS = THREE.RepeatWrapping;
     texture.wrapT = THREE.RepeatWrapping;
     texture.magFilter = THREE.NearestFilter;
-    texture.repeat.set(1, 1);
+    texture.repeat.set(1, 10);
     var planeGeo = new THREE.PlaneGeometry(planeSize/10, planeSize);
     var planeMat = new THREE.MeshPhongMaterial({
       map: texture,
-      side: THREE.DoubleSide,
+      side: THREE.FrontSide,
     });
     var mesh = new THREE.Mesh(planeGeo, planeMat);
     mesh.rotation.x = Math.PI * -0.5;
@@ -512,33 +512,10 @@ function init() {
       model.traverse(function (object) {
         if (object.isMesh) object.castShadow = true;
       });
-
-      // const anim = new THREE.FBXLoader();
-      // anim.load('./GLBs/player/FBX/Punching.fbx', (anim)=> {
-      //   const punch = mixer.clipAction(anim.animations[0]);
-      //   console.log(anim)
-      //   document.addEventListener('keydown',function(e) {
-      //     if (e.which==32){
-      //       // model.rotation.x = -Math.PI/2;
-      //       punch.play();
-      //     }
-      //   })
-      //   document.addEventListener('keyup',function(e) {
-      //     if (e.which==32){
-      //       // model.rotation.x = -Math.PI/2;
-      //       punch.stop();
-      //     }
-      //   })
-      // })
-
-      // const clip = THREE.AnimationClip.findByName(
-      //   clips,
-      //   "[Hành Động Cất Chứa]"
-      // );
       const mixer = new THREE.AnimationMixer(model);
       const clips = gltf.animations;
-      // console.log(clips);
-      const action = mixer.clipAction(clips[3]);
+      console.log(clips);
+      const action = mixer.clipAction(clips[2]);
       action.play();
       mixers.push(mixer);
     });

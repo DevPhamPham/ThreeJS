@@ -14,7 +14,7 @@ function scene() {
   HEIGHT = window.innerHeight;
   WIDTH = window.innerWidth;
   scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(Colors.LightYellow, 50, 2000);
+  scene.fog = new THREE.Fog(Colors.white, 100, 900);
   scene.background = new THREE.Color(0xa8def0);
 
   // CAMERA
@@ -33,8 +33,8 @@ function scene() {
   camera.position.y = 0;
 
   //...............................The X axis is red. The Y axis is green. The Z axis is blue.
-  const axesHelper = new THREE.AxesHelper(2000);
-  scene.add(axesHelper);
+  // const axesHelper = new THREE.AxesHelper(2000);
+  // scene.add(axesHelper);
 
   // RENDERER
   renderer = new THREE.WebGLRenderer({
