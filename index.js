@@ -12,7 +12,7 @@ const A = "a";
 const S = "s";
 const D = "d";
 const SHIFT = "shift";
-const SPACE = "SpaceBar";
+// const SPACE = "SpaceBar";
 const DIRECTIONS = [W, A, S, D];
 
 class KeyDisplay {
@@ -24,14 +24,14 @@ class KeyDisplay {
     const s = document.createElement("div");
     const d = document.createElement("div");
     const shift = document.createElement("div");
-    const SpaceBar = document.createElement("div");
+    // const SpaceBar = document.createElement("div");
 
     this.map.set(W, w);
     this.map.set(A, a);
     this.map.set(S, s);
     this.map.set(D, d);
     this.map.set(SHIFT, shift);
-    this.map.set(SPACE, SpaceBar);
+    // this.map.set(SPACE, SpaceBar);
 
     this.map.forEach((v, k) => {
       v.style.color = "blue";
@@ -54,14 +54,14 @@ class KeyDisplay {
     this.map.get(S).style.top = `${window.innerHeight - 100}px`;
     this.map.get(D).style.top = `${window.innerHeight - 100}px`;
     this.map.get(SHIFT).style.top = `${window.innerHeight - 100}px`;
-    this.map.get(SPACE).style.top = `${window.innerHeight - 100}px`;
+    // this.map.get(SPACE).style.top = `${window.innerHeight - 100}px`;
 
     this.map.get(W).style.left = `${300}px`;
     this.map.get(A).style.left = `${200}px`;
     this.map.get(S).style.left = `${300}px`;
     this.map.get(D).style.left = `${400}px`;
     this.map.get(SHIFT).style.left = `${50}px`;
-    this.map.get(SPACE).style.left = `${500}px`;
+    // this.map.get(SPACE).style.left = `${500}px`;
   }
 
   down(key) {
@@ -486,16 +486,27 @@ function init() {
     
     function city() {
       //                    add .GLTFLoader         city.glb
+      // {
+      //    var gltfLoader = new THREE.GLTFLoader();
+      //    var url = "./GLBs/architecture/Castle.glb";
+      //    gltfLoader.load(url, (gltf) => {
+      //     var root = gltf.scene;
+      //     scene.add(root);
+      //     root.position.set(0, 0, -50);
+      //     root.scale.set(7500, 7500, 7500);
+      //    });
+      // }
+
       {
-         var gltfLoader = new THREE.GLTFLoader();
-         var url = "./GLBs/architecture/Castle.glb";
-         gltfLoader.load(url, (gltf) => {
-          var root = gltf.scene;
-          scene.add(root);
-          root.position.set(0, 0, -50);
-          root.scale.set(7500, 7500, 7500);
-         });
-      }
+        var gltfLoader = new THREE.GLTFLoader();
+        var url = "./GLBs/architecture/bench.gltf";
+        gltfLoader.load(url, (gltf) => {
+         var root = gltf.scene;
+         scene.add(root);
+         root.position.set(0, 0, -50);
+         root.scale.set(6, 6, 6);
+        });
+     }
     }
 
     
